@@ -1,0 +1,90 @@
+---
+title: "NOAA_Earthquake_Analyzer"
+author: "Sanjaya J Shetty"
+date: "29 October 2021"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{About NOAA}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+The package 'NOAA_Earthquake_Analyzer' is used to clean, manipulate and visualize the NOAA dataset
+
+### Installing the package
+
+To install the package, you must be having 'devtools' package.
+
+```{r, eval=FALSE}
+install.packages('devtools') # installing devtools
+
+devtools::install_github('SanjayShetty01/NOAA_Earthquake_Analyzer')
+```
+
+### Loading the Required Packages
+
+```{r, warning=FALSE,message=FALSE}
+library(NoaaEarthquakeAnalyzer)
+library(readr)
+library(ggplot2)
+library(readr)
+library(dplyr)
+library(magrittr)
+```
+## Load and Cleaning the data 
+
+use data(earthquakes) to load the data into the environment. If you want to visualize a data stored in your local system, use `eq_load_data` function to load the tsv data (from the NOAA website) onto the environment. 
+
+```{r}
+data = NoaaEarthquakeAnalyzer::earthquakesdata
+
+
+
+cleanedData =  eq_clean_data(data)
+   
+```    
+
+## Visualzing the timeline plot of the Data 
+
+Columns required for the geom_time()
+
+* `x = DATE`
+* `y = COUNTRY`
+* `color = TOTAL_DEATHS`
+* `size = EQ_PRIMARY`
+
+
+```{r}
+cleanedData %>%
+
+            filter(COUNTRY %in% 'ITALY',
+                                 Year >= 1000 &
+                                 Year <= 2000) %>% 
+            ggplot(.,aes(x = DATE, 
+                          y = COUNTRY, 
+                          color = `Total Deaths`,
+                          size = Mag))+
+            geom_timeline() 
+              
+```
+
+## Creating Leaflet map 
+
+The user could use eq_create_label to have a HTML formatted label, which would give addition information. 
+
+```{r}
+
+data %>% 
+  eq_clean_data(.) %>%  
+  dplyr::filter(COUNTRY == "ITALY" )%>%   
+  dplyr::mutate(popup_text = eq_create_label(.)) %>% 
+  eq_map(annot_col = "popup_text")
+
+```
+
+```{r}
+data %>%
+eq_clean_data() %>% 
+  dplyr::filter(lubridate::year(DATE) >= 1855) %>% 
+  eq_map(annot_col = "DATE")
+```
