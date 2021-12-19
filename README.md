@@ -2,6 +2,8 @@
 
  <!-- badges: start -->
   [![R-CMD-check](https://github.com/SanjayShetty01/NoaaEarthquakeAnalyzer/workflows/R-CMD-check/badge.svg)](https://github.com/SanjayShetty01/NoaaEarthquakeAnalyzer/actions)
+  
+  [![Build Status](https://app.travis-ci.com/SanjayShetty01/NOAA_Earthquake_Analyzer.svg?branch=main)](https://app.travis-ci.com/SanjayShetty01/NOAA_Earthquake_Analyzer)
   <!-- badges: end -->
 
 ### NOAA_Earthquake_Analyzer Package
