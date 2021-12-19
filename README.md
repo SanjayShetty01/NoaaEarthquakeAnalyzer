@@ -1,5 +1,9 @@
 #  NOAA_Earthquake_Analyzer
 
+ <!-- badges: start -->
+  [![R-CMD-check](https://github.com/SanjayShetty01/NoaaEarthquakeAnalyzer/workflows/R-CMD-check/badge.svg)](https://github.com/SanjayShetty01/NoaaEarthquakeAnalyzer/actions)
+  <!-- badges: end -->
+
 ### NOAA_Earthquake_Analyzer Package
 
 The package can be used to read, clean the data and visualize the 
