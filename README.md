@@ -77,7 +77,7 @@ cleanedData %>%
 
 
 ```
-[timelinePlot]()
+![timelinePlot](https://github.com/SanjayShetty01/NoaaEarthquakeAnalyzer/blob/main/images/timelinePlot.png)
 
 
 2. Map Plot
@@ -91,7 +91,7 @@ data %>%
 
 ```
 
-![mapPlot]()
+![mapPlot](https://github.com/SanjayShetty01/NoaaEarthquakeAnalyzer/blob/main/images/mapPlot.png)
 
 We could specify the type of information that should be displayed. 
 
@@ -105,4 +105,4 @@ data %>%
 
 ```
 
-![mapPlotDate]()
+![mapPlotDate](https://github.com/SanjayShetty01/NoaaEarthquakeAnalyzer/blob/main/images/mapPlotDate.png)
