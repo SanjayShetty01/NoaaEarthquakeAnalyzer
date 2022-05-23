@@ -18,7 +18,7 @@ To install the package, you must be having 'devtools' package.
 ```{r, eval=FALSE}
 install.packages('devtools') # installing devtools
 
-devtools::install_github('SanjayShetty01/NOAA_Earthquake_Analyzer')
+devtools::install_github('SanjayShetty01/NOAAEarthquakeAnalyzer')
 ```
 
 ### Loading the Required Packages
