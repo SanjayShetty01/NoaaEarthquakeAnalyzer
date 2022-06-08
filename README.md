@@ -52,6 +52,9 @@ amount of deaths due to the earthquakes.) on the leaflet map.
 ### Example
 
 ```r
+
+library(NoaaEarthquakeAnalyzer)
+
 # Getting the data
 
 data = NoaaEarthquakeAnalyzer::earthquakesdata
