@@ -82,8 +82,26 @@ cleanedData %>%
 ```
 ![timelinePlot](https://github.com/SanjayShetty01/NoaaEarthquakeAnalyzer/blob/main/images/timelinePlot.png)
 
+2. Labelling the timeline plot
 
-2. Map Plot
+```r
+DataViz = cleanedData %>%
+            filter(COUNTRY %in% 'YEMEN',
+              Year >= 1000 &
+              Year <= 2000)
+
+ggplot(DataViz,aes(x = DATE,
+               y = COUNTRY, 
+               color = `Total Deaths`,
+               size = Mag))+
+  geom_timeline()+
+  geom_timeline_label(tags = DataViz$Location.Name)
+
+
+```
+![timelineLabelPlot](https://github.com/SanjayShetty01/NoaaEarthquakeAnalyzer/blob/main/images/timelineLablePlot.png)
+
+3. Map Plot
 
 ```r
 data %>% 
