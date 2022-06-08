@@ -21,7 +21,7 @@ To load the package. You must first install `devtools` package from CRAN.
 ```r
 install.packakes('devtools') # installing devtools
 
-devtools::install_github('SanjayShetty01/NOAA_Earthquake_Analyzer')
+devtools::install_github('SanjayShetty01/NOAAEarthquakeAnalyzer')
 ```
 
 ### Usage
