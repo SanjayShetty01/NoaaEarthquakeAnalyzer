@@ -43,6 +43,7 @@ GeomTimeLineLabel <- ggplot2::ggproto("GeomTimeLineLabel", ggplot2::Geom,
                                                   draw_panel = function(data, panel_scales, coord) {
 
                                                   coords <- coord$transform(data, panel_scales)
+                                                  coords$size <-coords$size / max(coords$size) * 1.5
 
                                                   Timeline_seg_grobs <- grid::segmentsGrob(x0 = grid::unit(coords$x, "npc"),
                                                                                             y0 = grid::unit(coords$y, "npc"),
