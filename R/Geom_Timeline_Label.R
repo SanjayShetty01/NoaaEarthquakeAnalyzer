@@ -33,7 +33,6 @@ geom_timeline_label <- function(mapping = NULL,data = NULL, na.rm = TRUE,show.le
                                                               params = list(na.rm = na.rm, ...))
 }
 
-
 GeomTimeLineLabel <- ggplot2::ggproto("GeomTimeLineLabel", ggplot2::Geom,
                                         required_aes = c("x", "tags"),default_aes = ggplot2::aes(y = 0.5,
                                         number = NULL, max_aes = NULL),
